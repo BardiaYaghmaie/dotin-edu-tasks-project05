@@ -34,3 +34,7 @@ minikube add node
 ```
 kubectl label node <node_name> node-role.kubernetes.io/worker=worker   # or kubectl label nodes <node_name> role=worker
 ```
+
+## Step 2
+4- Write Pod manifests for each service.
+e.g. a Pod Template:
