@@ -38,3 +38,15 @@ kubectl label node <node_name> node-role.kubernetes.io/worker=worker   # or kube
 ## Step 2
 4- Write Pod manifests for each service.
 e.g. a Pod Template:
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: shop-pod
+spec:
+  containers:
+  - name: shop
+    image: bardiayaghmaie/pr04-shop:1.0
+    ports:
+    - containerPort: 80
+```
