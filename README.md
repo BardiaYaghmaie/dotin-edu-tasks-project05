@@ -36,17 +36,50 @@ kubectl label node <node_name> node-role.kubernetes.io/worker=worker   # or kube
 ```
 
 ## Step 2
-4- Write Pod manifests for each service.
+4- Write Pod manifests for each microservice.
 e.g. a Pod Template:
 ```
 apiVersion: v1
 kind: Pod
 metadata:
   name: shop-pod
+  labels:
+    name: shop-pod
+    project: pr05
 spec:
   containers:
   - name: shop
     image: bardiayaghmaie/pr04-shop:1.0
     ports:
     - containerPort: 80
+```
+
+5- Deploy Pod
+```
+kubectl apply -f shop/shop-pod.yml
+```
+
+## Step 3
+6- Write Service manifests for each Pod
+e.g. a Service Template:
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: shop-service
+spec:
+  type: NodePort
+  selector:
+    name: shop-pod
+    project: pr05
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30003
+```
+
+## Step 4
+7- Access each service via
+```
+minikube service shop-service
 ```
