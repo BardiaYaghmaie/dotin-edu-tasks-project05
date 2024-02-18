@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: order-pod
+spec:
+  containers:
+  - name: order
+    image: bardiayaghmaie/pr04-order:1.0
+    ports:
+    - containerPort: 80

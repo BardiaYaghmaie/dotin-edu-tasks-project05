@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+spec:
+  containers:
+  - name: nginx
+    image: bardiayaghmaie/pr04-nginx:1.0
+    ports:
+    - containerPort: 80
+  # Add other configuration like volumes, environment variables, etc. if needed

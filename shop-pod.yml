@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: shop-pod
+spec:
+  containers:
+  - name: shop
+    image: bardiayaghmaie/pr04-shop:1.0
+    ports:
+    - containerPort: 80
