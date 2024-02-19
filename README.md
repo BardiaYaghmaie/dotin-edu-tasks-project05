@@ -77,9 +77,13 @@ spec:
       targetPort: 80
       nodePort: 30003
 ```
-
+7- Deploy Service
+```
+kubectl apply -f shop/shop-service.yml
+```
 ## Step 4
-7- Access each service via
+8- Access each service via
 ```
 minikube service shop-service
 ```
+
