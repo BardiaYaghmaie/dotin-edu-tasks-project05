@@ -3,11 +3,10 @@ kind: Service
 metadata:
   name: shop-service
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     name: shop-pod
     project: pr05
   ports:
     - port: 80
       targetPort: 80
-      nodePort: 30003

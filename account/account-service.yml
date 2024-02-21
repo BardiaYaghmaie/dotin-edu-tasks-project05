@@ -3,11 +3,11 @@ kind: Service
 metadata:
   name: accounts-service
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     name: accounts-pod
     project: pr05
   ports:
     - port: 80
       targetPort: 80
-      nodePort: 30001
+      #nodePort: 30001

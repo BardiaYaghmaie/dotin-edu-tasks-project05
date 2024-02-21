@@ -87,3 +87,12 @@ kubectl apply -f shop/shop-service.yml
 minikube service shop-service
 ```
 
+## Step 5 (additional step, actually related to project06)
+9- Change service types from NodePort to ClusterIP
+```
+...
+~~kind: NodePort~~ kind: ClusterIP
+```
+
+10- Create an Ingress manifest in nginx directory
+...

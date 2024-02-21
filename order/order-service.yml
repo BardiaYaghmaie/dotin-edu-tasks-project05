@@ -3,11 +3,11 @@ kind: Service
 metadata:
   name: order-service
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     name: order-pod
     project: pr05
   ports:
     - port: 80
       targetPort: 80
-      nodePort: 30002
+      #nodePort: 30002
